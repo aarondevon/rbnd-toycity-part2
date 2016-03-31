@@ -1,7 +1,20 @@
-require 'json'
-path = File.join(File.dirname(__FILE__), '../data/products.json')
-file = File.read(path)
-products_hash = JSON.parse(file)
+def start
+
+  # Grabs info from JSON file and sets up report file to export to.
+  def setup_files
+  require 'json'
+  path = File.join(File.dirname(__FILE__), '../data/products.json')
+  file = File.read(path)
+  # Made products_hash a global variable.
+  $products_hash = JSON.parse(file)
+  # Made report_file a global variable.
+  $report_file = File.new("report.txt", "w+")
+  end
+
+  def create_report
+  end
+
+end
 
 # Print "Sales Report" in ascii art
 
