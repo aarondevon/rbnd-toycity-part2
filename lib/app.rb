@@ -42,11 +42,12 @@ end
 
 # Gathers product data
 def product_data(product)
-  toy_name(product) + "\n" +
-  retail_price(product) + "\n" +
-  total_purchases(product) + "\n" +
-  total_sales(product) + "\n" +
-  average_price(product)
+  print_toy_name(product) + "\n" +
+  print_retail_price(product) + "\n" +
+  print_total_purchases(product) + "\n" +
+  print_total_sales(product) + "\n" +
+  average_price(product) + "\n" +
+  average_discount_dollar(product)
 end
 
 # Prints product data
@@ -74,18 +75,25 @@ end
 
   # For each product in the data set:
   	# Get the name of the toy
-    def toy_name(product)
+    def print_toy_name(product)
       product["title"]
     end
 
     # Get the retail price of the toy
     def retail_price(product)
-      "Retail Price: $#{product["full-price"]}"
+      product["full-price"].to_f
     end
 
+    def print_retail_price(product)
+      "Retail Price: $#{retail_price(product)}"
+    end
   	# Calculate and print the total number of purchases
     def total_purchases(product)
-      "Total Purchases: #{product["purchases"].length}"
+      product["purchases"].length
+    end
+
+    def print_total_purchases(product)
+      "Total Purchases: #{total_purchases(product)}"
     end
 
   	# Calculate and print the total amount of sales
@@ -95,7 +103,15 @@ end
         sale_price = sale["price"].to_f
         total = sale_price + total
       end
-      return "Total Sales: $#{total}"
+      return total
+    end
+
+    def print_total_sales(product)
+      return "Total Sales: $#{total_sales(product)}"
+    end
+
+    def print_total_sales(product)
+      return "Total Sales: $#{total_sales(product)}"
     end
 
   	# Calculate and print the average price the toy sold for
@@ -114,16 +130,16 @@ end
     end
 
   	# Calculate and print the average discount (% or $) based off the average sales price
-    def average_discount_dollar_calculator
-
+    def average_discount_dollar_calculator(product)
+      return ((retail_price(product) * total_purchases(product)) - total_sales(product)) / total_purchases(product)
     end
 
     def average_discount_percent_calculator
 
     end
 
-    def average_discount_dollar
-
+    def average_discount_dollar(product)
+      return "Average Discount $#{average_discount_dollar_calculator(product)}"
     end
 
     def average_discount_percent
