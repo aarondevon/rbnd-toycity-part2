@@ -47,7 +47,8 @@ def product_data(product)
   print_total_purchases(product) + "\n" +
   print_total_sales(product) + "\n" +
   average_price(product) + "\n" +
-  average_discount_dollar(product)
+  print_average_discount_dollar(product) + "\n" +
+  print_average_discount_percent(product)
 end
 
 # Prints product data
@@ -134,16 +135,17 @@ end
       return ((retail_price(product) * total_purchases(product)) - total_sales(product)) / total_purchases(product)
     end
 
-    def average_discount_percent_calculator
-
+    def average_discount_percent_calculator(product)
+      avergae_discount_percent = average_discount_dollar_calculator(product) / (retail_price(product) / 100)
+      avergae_discount_percent = avergae_discount_percent.round(2)
     end
 
-    def average_discount_dollar(product)
+    def print_average_discount_dollar(product)
       return "Average Discount $#{average_discount_dollar_calculator(product)}"
     end
 
-    def average_discount_percent
-
+    def print_average_discount_percent(product)
+      return "Average Discount Percentage: #{average_discount_percent_calculator(product)}%"
     end
 
 
