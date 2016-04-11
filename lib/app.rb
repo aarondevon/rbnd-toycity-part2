@@ -161,7 +161,7 @@ end
 
   def brand_data(brand)
     print_brand_name(brand)
-
+    print_stock(brand)
   end
 
   def print_brand_data
@@ -187,10 +187,33 @@ end
   end
 
   # Count and print the number of the brand's toys we stock
-  def count_stock(brand)
-
+  def get_stock(brand)
+    current_brand = brand["brand"]
+    stock = []
+    total_brand_stock = 0
+    $products_hash["items"].each do |same|
+      if current_brand == same["brand"]
+        stock << same["stock"].to_i
+      end
+    end
+    stock.each do |add|
+      total_brand_stock += add
+    end
+    return stock
   end
-  
+
+  # def count_stock(brand)
+  #   stock = get_stock(brand)
+  #   total_brand_stock = 0
+  #   stock.each do |add|
+  #     total_brand_stock += add
+  #   end
+  # end
+
+  def print_stock(brand)
+    $report_file.puts "Number of Products: #{get_stock(brand)}"
+  end
+
   	# Calculate and print the average price of the brand's toys
   	# Calculate and print the total sales volume of all the brand's toys combined
 
