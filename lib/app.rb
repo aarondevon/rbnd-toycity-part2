@@ -162,40 +162,48 @@ end
 
   def print_brand_data
     print_brands_title
-    #$products_hash["items"].each do |brand|
-      # $report_file.puts line if brand["stock"] > 0
-      $report_file.puts
-      # $report_file.puts line if brand["stock"] > 0
-      # $report_file.puts space if brand["stock"] > 0
-    #end
+    $report_file.puts space
+    collect_brand_data($products_hash).each do |key, value|
+      $report_file.puts format_brand_name(value)
+      $report_file.puts line
+      $report_file.puts format_stock(value)
+      $report_file.puts format_average_brand_price(value)
+      $report_file.puts format_brand_sales(value)
+      $report_file.puts line
+      $report_file.puts space
+    end
   end
 
   # Create a method that takes as an argument the products hash
   # Desired ouput is an array of uniqe brand names
   # Desired out put is an array of hashes that contain calculated brand data
 
-  def collect_brand_name(product_hash)
+  def collect_brand_data(product_hash)
     brand_data_hash = {}
     product_hash["items"].each do |product|
       if brand_data_hash[product["brand"]]
         brand_data_hash[product["brand"]]["total_stock"] += product["stock"]
-        brand_data_hash[product["brand"]]["full-price"] += product["full-price"]
+        brand_data_hash[product["brand"]]["full-price"] += product["full-price"].to_f.round(2)
         brand_data_hash[product["brand"]]["product_price"] += calculate_product_price(product["purchases"])
-        brand_data_hash[product["brand"]]["total_purchases"] += product["purchases"]
+        brand_data_hash[product["brand"]]["total_purchases"] += product["purchases"].length
+        brand_data_hash[product["brand"]]["products_per_brand"] += 1
         p "This thing exists"
       else
         p "This thing does not exist"
         brand_data_hash[product["brand"]] = {
           "brand_name" => product["brand"],
           "total_stock" => product["stock"],
-          "full-price" => product["full-price"],
+          "full-price" => product["full-price"].to_f.round(2),
           "product_price" => calculate_product_price(product["purchases"]),
-          "total_purchases" => product["purchases"].length
+          "total_purchases" => product["purchases"].length,
+          "products_per_brand" => 1
         }
       end
     end
       return brand_data_hash
   end
+
+
 
   # Method gets purchase price data.
   def calculate_product_price(purchases)
@@ -206,14 +214,43 @@ end
     purchase_price
   end
 
-  # Count and print the number of the brand's toys we stock
+  def get_brand_name(brand_name)
+    brand_name["brand_name"]
+  end
 
+  def format_brand_name(brand_name)
+    "#{get_brand_name(brand_name)}"
+  end
+
+  # Count and print the number of the brand's toys we stock
+  def stock_count(stock)
+    stock["total_stock"]
+  end
+
+  def format_stock(stock)
+    "Number of Products: #{stock_count(stock)}"
+  end
 
 
   	# Calculate and print the average price of the brand's toys
+    def average_brand_price(price)
+      total_sales = price["full-price"].to_f
+      products_per_brand = price["products_per_brand"].to_f
+      average_price = total_sales / products_per_brand
+      average_price.round(2)
+    end
 
-
+    def format_average_brand_price(price)
+      "Average Product Price: $#{average_brand_price(price)}"
+    end
   	# Calculate and print the total sales volume of all the brand's toys combined
+    def total_brand_sales(sales)
+      sales["product_price"].round(2)
+    end
+
+    def format_brand_sales(sales)
+      "Total Sales: $#{total_brand_sales(sales)}"
+    end
 
     def start
       setup_files
