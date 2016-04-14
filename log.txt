@@ -1,0 +1,52 @@
+commit e5c4a260747b886cd5445ed94727ca9513d28615
+Author: Aaron Sawyer <me@aarondevon.com>
+Date:   Wed Apr 6 13:32:52 2016 -0500
+
+    Adds average discount percent methods.
+
+commit 535a22953550e4f61ed8f57d54313bf5378d80d1
+Author: Aaron Sawyer <me@aarondevon.com>
+Date:   Wed Apr 6 13:24:41 2016 -0500
+
+    Adds average discount methods
+
+commit 59019bb40510459d5f8ad13e468ada94e777bbf0
+Author: Aaron Sawyer <me@aarondevon.com>
+Date:   Wed Apr 6 12:51:29 2016 -0500
+
+    Creates methods for toy name, retail price, number of purchases, total sales, and sales average.
+
+commit 8beca98ef5d25e832d9e3a911a58f99bb2adeeef
+Author: Aaron Sawyer <me@aarondevon.com>
+Date:   Tue Apr 5 13:57:11 2016 -0500
+
+    Rearranged methods
+
+commit 7635fce12744b1aba8a5e617ef189fe5f36ea69c
+Author: Aaron Sawyer <me@aarondevon.com>
+Date:   Mon Apr 4 11:06:31 2016 -0500
+
+    Add methods to print sales, products, and brands titles in ascii art
+
+commit 9ffaa6600e6026f3b626f53a835e9648e727b79c
+Author: Aaron Sawyer <me@aarondevon.com>
+Date:   Thu Mar 31 13:52:50 2016 -0500
+
+    Setup files
+
+commit 453de743faad4f2f4737a73e165522a74eb76c3d
+Author: Aaron Sawyer <me@aarondevon.com>
+Date:   Thu Mar 31 13:30:43 2016 -0500
+
+    Initial commit
+[33m9c73add[m Methods for printing brand data [31m(aarondevon, 3 minutes ago)[m
+[33m552dfaf[m Create method that grabs all essential brand data. [31m(aarondevon, 3 hours ago)[m
+[33m0d9d644[m Number of products test [31m(Aaron Sawyer, 3 days ago)[m
+[33m8c5df96[m brand name methods [31m(Aaron Sawyer, 6 days ago)[m
+[33me5c4a26[m Adds average discount percent methods. [31m(Aaron Sawyer, 8 days ago)[m
+[33m535a229[m Adds average discount methods [31m(Aaron Sawyer, 8 days ago)[m
+[33m59019bb[m Creates methods for toy name, retail price, number of purchases, total sales, and sales average. [31m(Aaron Sawyer, 8 days ago)[m
+[33m8beca98[m Rearranged methods [31m(Aaron Sawyer, 9 days ago)[m
+[33m7635fce[m Add methods to print sales, products, and brands titles in ascii art [31m(Aaron Sawyer, 10 days ago)[m
+[33m9ffaa66[m Setup files [31m(Aaron Sawyer, 2 weeks ago)[m
+[33m453de74[m Initial commit [31m(Aaron Sawyer, 2 weeks ago)[m
