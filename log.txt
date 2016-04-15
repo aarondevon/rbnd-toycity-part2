@@ -50,3 +50,17 @@ Date:   Thu Mar 31 13:30:43 2016 -0500
 [33m7635fce[m Add methods to print sales, products, and brands titles in ascii art [31m(Aaron Sawyer, 10 days ago)[m
 [33m9ffaa66[m Setup files [31m(Aaron Sawyer, 2 weeks ago)[m
 [33m453de74[m Initial commit [31m(Aaron Sawyer, 2 weeks ago)[m
+[33m21f610b[m Removed rendundant method, made use of total_sales method in average_price_calculator method. [31m(aarondevon, 31 seconds ago)[m
+[33m6afe309[m Add report.txt [31m(aarondevon, 3 hours ago)[m
+[33m764b77b[m Add log.txt [31m(aarondevon, 3 hours ago)[m
+[33m9c73add[m Methods for printing brand data [31m(aarondevon, 3 hours ago)[m
+[33m552dfaf[m Create method that grabs all essential brand data. [31m(aarondevon, 7 hours ago)[m
+[33m0d9d644[m Number of products test [31m(Aaron Sawyer, 3 days ago)[m
+[33m8c5df96[m brand name methods [31m(Aaron Sawyer, 6 days ago)[m
+[33me5c4a26[m Adds average discount percent methods. [31m(Aaron Sawyer, 8 days ago)[m
+[33m535a229[m Adds average discount methods [31m(Aaron Sawyer, 8 days ago)[m
+[33m59019bb[m Creates methods for toy name, retail price, number of purchases, total sales, and sales average. [31m(Aaron Sawyer, 8 days ago)[m
+[33m8beca98[m Rearranged methods [31m(Aaron Sawyer, 9 days ago)[m
+[33m7635fce[m Add methods to print sales, products, and brands titles in ascii art [31m(Aaron Sawyer, 10 days ago)[m
+[33m9ffaa66[m Setup files [31m(Aaron Sawyer, 2 weeks ago)[m
+[33m453de74[m Initial commit [31m(Aaron Sawyer, 2 weeks ago)[m
