@@ -110,26 +110,18 @@ end
     end
 
     def print_total_sales(product)
-      return "Total Sales: $#{total_sales(product)}"
-    end
-
-    def print_total_sales(product)
-      return "Total Sales: $#{total_sales(product)}"
+      "Total Sales: $#{total_sales(product)}"
     end
 
   	# Calculate and print the average price the toy sold for
     def average_price_calulator(product)
-      total = 0
-      product["purchases"].each do |sale|
-        sale_price = sale["price"].to_f
-        total = sale_price + total
-      end
+      total = total_sales(product)
       purchases = product["purchases"].length
       total / purchases
     end
 
     def average_price(product)
-      return "Average Price: #{average_price_calulator(product)}"
+      "Average Price: #{average_price_calulator(product)}"
     end
 
   	# Calculate and print the average discount (% or $) based off the average sales price
@@ -187,9 +179,7 @@ end
         brand_data_hash[product["brand"]]["product_price"] += calculate_product_price(product["purchases"])
         brand_data_hash[product["brand"]]["total_purchases"] += product["purchases"].length
         brand_data_hash[product["brand"]]["products_per_brand"] += 1
-        p "This thing exists"
       else
-        p "This thing does not exist"
         brand_data_hash[product["brand"]] = {
           "brand_name" => product["brand"],
           "total_stock" => product["stock"],
@@ -200,7 +190,7 @@ end
         }
       end
     end
-      return brand_data_hash
+      brand_data_hash
   end
 
 
